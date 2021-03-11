@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateModulesTable extends Migration
+class CreateChoicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,16 @@ class CreateModulesTable extends Migration
      */
     public function up()
     {
-        Schema::create('modules', function (Blueprint $table) {
+        Schema::create('choices', function (Blueprint $table) {
             $table->id();
-            $table->string('module', 100);
+
+            $table->foreignId('question_id')->constrained('choices');
+
+            $table->string('content', 45);
+            $table->boolean('is_correct')->default(true);
+            $table->boolean('is_question')->default(true);
             $table->boolean('active')->default(true);
+
         });
     }
 
@@ -27,6 +33,6 @@ class CreateModulesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('modules');
+        Schema::dropIfExists('choices');
     }
 }
