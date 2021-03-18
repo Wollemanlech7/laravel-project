@@ -16,7 +16,7 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('topic_id')->constrained('topics');
+            $table->foreignId('topic_id')->constrained();
 
             $table->tinyInteger('sequence');
             $table->text('content');

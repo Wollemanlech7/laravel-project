@@ -17,7 +17,7 @@ class CreateTopicsTable extends Migration
             $table->id();
             $table->string('topic', 150);
 
-            $table->foreignId('module_id')->constrained('modules');
+            $table->foreignId('module_id')->constrained();
 
             $table->boolean('active')->default(true);
         });

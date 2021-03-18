@@ -16,8 +16,8 @@ class CreateQuestionsQuestionnariesTable extends Migration
         Schema::create('questions_questionnaries', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('question_id')->constrained('questions');
-            $table->foreignId('questionnaire_id')->constrained('questionnaries');
+            $table->foreignId('question_id')->constrained();
+            $table->foreignId('questionnarie_id')->constrained();
 
             $table->boolean('active')->default(true);
 

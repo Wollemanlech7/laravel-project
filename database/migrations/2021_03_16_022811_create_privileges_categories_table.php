@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCoursesSubjectsTable extends Migration
+class CreatePrivilegesCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,15 @@ class CreateCoursesSubjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('courses_subjects', function (Blueprint $table) {
+        Schema::create('privileges_categories', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('course_id')->constrained();
-            $table->foreignId('subject_id')->constrained();
+            $table->string('privilege_category', 30);
 
-            $table->boolean('active')->default(true);
+            $table->tinyInteger('menu_order');
+        
+            $table->text('icon', 350);
+          
         });
     }
 
@@ -30,6 +32,6 @@ class CreateCoursesSubjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('courses_subjects');
+        Schema::dropIfExists('privileges_categories');
     }
 }

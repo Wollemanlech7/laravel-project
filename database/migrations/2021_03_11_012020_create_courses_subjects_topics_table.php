@@ -17,7 +17,7 @@ class CreateCoursesSubjectsTopicsTable extends Migration
             $table->id();
 
             $table->foreignId('course_subject_id')->constrained('courses_subjects');
-            $table->foreignId('module_id')->constrained('modules');
+            $table->foreignId('module_id')->constrained();
 
             $table->boolean('active')->default(true);
         });
