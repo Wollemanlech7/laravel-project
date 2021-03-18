@@ -15,7 +15,8 @@ class CreatePrivilegesTable extends Migration
     {
         Schema::create('privileges', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('privilege_category_id')->constrained('privileges');
+            
+            $table->foreignId('privilege_category_id')->constrained('privileges_categories');
 
             $table->string('privilege', 25);
             $table->string('description', 30);
