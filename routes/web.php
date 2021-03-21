@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Boxoffice\SubjectController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/subjects', 'Boxoffice\SubjectController@index');
+
+Route::prefix('dashboard')->group(function () {
+    Route::get('/subjects', [SubjectController::class, 'index']);
+});
+
