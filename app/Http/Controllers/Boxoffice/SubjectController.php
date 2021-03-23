@@ -10,4 +10,8 @@ class SubjectController extends Controller
     public function index() {
         return view('boxoffice.content.subjects.index');
     }
+
+    public function create() {
+        return view('boxoffice.content.subjects.create');
+    }
 }

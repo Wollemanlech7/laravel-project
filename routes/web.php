@@ -22,5 +22,6 @@ Route::get('/', function () {
 
 Route::prefix('dashboard')->group(function () {
     Route::get('/subjects', [SubjectController::class, 'index']);
+    Route::get('/subjects/create', [SubjectController::class, 'create']);
 });
 
