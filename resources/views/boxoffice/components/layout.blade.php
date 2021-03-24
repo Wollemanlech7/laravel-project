@@ -11,7 +11,7 @@
 <body>
     
     @include('boxoffice.components.navbar')
-    {{-- @include('boxoffice.components.sidebar') --}}
+    @include('boxoffice.components.sidebar')
 
     {{--<header class="bg-white shadow">
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -22,11 +22,13 @@
     </header>--}}
     
     
-    <main>
-        <div class="container px-4">
-           @section('container')
-
-           @show 
+    <main class="static">
+        <div class="absolute left-20 right-0 bottom-0 top-16" >
+            <div class="contianer mx-10 mt-5 bg-red-500">
+                @section('container')
+                
+                @show 
+            </div>
         </div>
     </main>
 
