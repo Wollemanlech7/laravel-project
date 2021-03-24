@@ -10,8 +10,8 @@
 </head>
 <body>
     
-    {{--@include('boxoffice.components.navbar')
-    @include('boxoffice.components.sidebar')--}}
+    @include('boxoffice.components.navbar')
+    @include('boxoffice.components.sidebar')
 
     {{--<header class="bg-white shadow">
         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -23,11 +23,10 @@
     
     
     <main>
-        <div class="container mx-auto">
+        <div class="container px-4">
            @section('container')
-               
+
            @show 
-       
         </div>
     </main>
 
