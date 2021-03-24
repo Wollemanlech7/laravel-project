@@ -24,7 +24,7 @@
     
     <main class="static">
         <div class="absolute left-20 right-0 bottom-0 top-16" >
-            <div class="contianer mx-10 mt-5 bg-red-500">
+            <div class="contianer mx-10 mt-5">
                 @section('container')
                 
                 @show 
