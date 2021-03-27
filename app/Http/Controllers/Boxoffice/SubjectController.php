@@ -45,6 +45,8 @@ class SubjectController extends Controller
         echo "se guardo exitosamente";
 
     }
+
+    
 }
 
 
