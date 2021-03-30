@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Boxoffice\LoginController;
 use App\Http\Controllers\Boxoffice\SubjectController;
 use App\Http\Controllers\Boxoffice\ModuleController;
 
@@ -17,20 +18,25 @@ use App\Http\Controllers\Boxoffice\ModuleController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 
 Route::prefix('dashboard')->group(function () {
+    // LOGIN
+    Route::get('/login', [LoginController::class, 'index']);
+    Route::post('/login', [LoginController::class, 'store']);
+    Route::get('/logout', [LoginController::class, 'logout']);
+
+    //SUBJECTS
     Route::get('/subjects', [SubjectController::class, 'index']);
     Route::get('/subjects/create', [SubjectController::class, 'create']);
     Route::post('/subjects/new', [SubjectController::class, 'save'])->name('subject.save');
 
     Route::get('/subjects/modules', [ModuleController::class, 'index']);
-
-    
-
 });
 
-
+Route::get('/test', function() {
+    return view('test');
+});
 
