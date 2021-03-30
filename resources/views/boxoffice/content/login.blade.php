@@ -23,17 +23,18 @@
               </a>
             </p>
           </div>
-          <form class="mt-8 space-y-6" action="#" method="POST">
+          <form class="mt-8 space-y-6" action="{{ route('dashboard.login') }}" method="POST">
+            @csrf
             <input type="hidden" name="remember" value="true">
             <div class="rounded-md shadow-sm -space-y-px">
               <div class="mt-20 mb-10">
                 <label for="email-address" class="ml-14 font-medium">Email address</label>
-                <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block ml-14 w-9/12 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" >
+                <input id="email-address" name="txtEmail" type="email" autocomplete="email" required class="appearance-none rounded-none relative block ml-14 w-9/12 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" >
               </div>
               <div class="">
                 <label for="password" class="ml-14 font-medium">Password</label>
                
-                <input id="password" name="password" type="password" autocomplete="current-password" required class=" appearance-none rounded-none relative ml-14 w-9/12 block  px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" >
+                <input id="password" name="txtPassword" type="password" autocomplete="current-password" required class=" appearance-none rounded-none relative ml-14 w-9/12 block  px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" >
                 
               </div>
             </div>

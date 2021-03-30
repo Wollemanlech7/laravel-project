@@ -18,14 +18,14 @@ use App\Http\Controllers\Boxoffice\ModuleController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('index'); 
 });
 
 
 Route::prefix('dashboard')->group(function () {
     // LOGIN
     Route::get('/login', [LoginController::class, 'index']);
-    Route::post('/login', [LoginController::class, 'store']);
+    Route::post('/login', [LoginController::class, 'store'])->name('dashboard.login');
     Route::get('/logout', [LoginController::class, 'logout']);
 
     //SUBJECTS

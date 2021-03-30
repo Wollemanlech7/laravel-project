@@ -17,9 +17,9 @@ class LoginController extends Controller
         return view('boxoffice.content.login');
     }
 
-    public function store() {
+    public function store(Request $request) {
         if(Auth::attempt([  'email'     => $request['txtEmail'],
-                            'password'  => $request['txtPassword']])) {
+                        'password'  => $request['txtPassword']])) {
             
             Session::put('_BOXOFFICE_SESSION_', $this::BOXOFFICE_SESSION);
             return Redirect('dashboard');
