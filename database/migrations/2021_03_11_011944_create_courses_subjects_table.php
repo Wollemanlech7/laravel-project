@@ -21,6 +21,18 @@ class CreateCoursesSubjectsTable extends Migration
 
             $table->boolean('active')->default(true);
         });
+
+        DB::statement("insert into courses_subjects
+                    (
+                        id, course_id, subject_id, active
+                    )
+                    values
+                        (1, 1, 1, 1),
+                        (2, 1, 2, 1),
+                        (3, 1, 3, 1),
+
+
+        ");
     }
 
     /**

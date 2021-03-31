@@ -18,6 +18,16 @@ class CreateCoursesTable extends Migration
             $table->string('exam', 35);
             $table->boolean('active')->default(true);
         });
+
+        DB::statement("insert into courses
+                    (
+                        id, exam, active,
+                    )
+                    values
+                        (1, 'SAT', 1),
+                        (2, 'ACT', 1)       
+        ");
+
     }
 
     /**

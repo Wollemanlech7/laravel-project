@@ -15,13 +15,28 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->string('name', 30);
+            $table->string('last_name', 30);
+            $table->date('birthday');
+            $table->string('email', 50)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('phone', 20);
+            $table->string('address', 200);
+            $table->boolean('active')->default(true);   
             $table->rememberToken();
             $table->timestamps();
         });
+
+        DB::statement("insert into users
+                    (
+                        id, name, last_name, birthday, email, email_verified_at, password, phone, address, active, remember_token, created_at, updated_at
+                    )
+                    values
+                        (1, 'arturo', 'ordaz', '2002-09-03', 'admin@somma.mx', '',". bcrypt('1234') .", '', '', 1, '', NOW(), NOW()),
+                        (2, 'Juan', 'admin2', '2002-09-03', 'jc@somma.mx', '',". bcrypt('1234') .", '', '', 1, '', NOW(), NOW())       
+        ");
+
     }
 
     /**
