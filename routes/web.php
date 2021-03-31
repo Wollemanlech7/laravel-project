@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PublicWeb\IndexController;
 use App\Http\Controllers\Boxoffice\LoginController;
 use App\Http\Controllers\Boxoffice\SubjectController;
 use App\Http\Controllers\Boxoffice\ModuleController;
@@ -17,9 +18,7 @@ use App\Http\Controllers\Boxoffice\ModuleController;
 |
 */
 
-Route::get('/', function () {
-    return view('index'); 
-});
+Route::get('/', [IndexController::class, 'index']);
 
 
 Route::prefix('dashboard')->group(function () {
