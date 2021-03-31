@@ -22,14 +22,15 @@ class CreateCoursesSubjectsTable extends Migration
             $table->boolean('active')->default(true);
         });
 
-        DB::statement("insert into courses_subjects
+        DB::statement("INSERT INTO 
+                        courses_subjects
                     (
                         id, course_id, subject_id, active
                     )
-                    values
+                    VALUES
                         (1, 1, 1, 1),
                         (2, 1, 2, 1),
-                        (3, 1, 3, 1),
+                        (3, 1, 3, 1)
 
 
         ");

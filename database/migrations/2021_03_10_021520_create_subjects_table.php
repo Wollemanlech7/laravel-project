@@ -27,9 +27,9 @@ class CreateSubjectsTable extends Migration
                         id, subject, background, icon, active
                     )
                     values
-                        (1, 'Math', 'bg-red-600 text-white hover:bg-red-700', null, 1),
-                        (2, 'Reading and Writing', 'bg-green-600 text-white hover:bg-green-700', null, 1),
-                        (3, 'Essay', 'bg-blue-600 text-white hover:bg-blue-700', null, 1)
+                        (1, 'Math', 'bg-red-600 text-white hover:bg-red-700', '', 1),
+                        (2, 'Reading and Writing', 'bg-green-600 text-white hover:bg-green-700', '', 1),
+                        (3, 'Essay', 'bg-blue-600 text-white hover:bg-blue-700', '', 1)
 
         ");
 

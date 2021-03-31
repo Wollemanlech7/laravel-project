@@ -19,11 +19,12 @@ class CreateCoursesTable extends Migration
             $table->boolean('active')->default(true);
         });
 
-        DB::statement("insert into courses
+        DB::statement("INSERT INTO
+                        courses
                     (
-                        id, exam, active,
+                        id, exam, active
                     )
-                    values
+                    VALUES
                         (1, 'SAT', 1),
                         (2, 'ACT', 1)       
         ");
