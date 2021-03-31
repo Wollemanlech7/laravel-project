@@ -16,10 +16,11 @@ class SubjectController extends Controller
 
         $objCourseSubject = CoursesSubject::where('courses_subjects.active', 1)
                                             ->join('subjects', 'courses_subjects.subject_id', '=', 'subjects.id')
-                                            ->select(
+                                            ->select( 
                                                 'courses_subjects.id',
                                                 'courses_subjects.course_id',
-                                                'subjects.subject'
+                                                'subjects.subject',
+                                                'subjects.background'
                                             )
                                             ->get();
 
