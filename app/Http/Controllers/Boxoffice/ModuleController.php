@@ -8,6 +8,6 @@ use App\Http\Controllers\Controller;
 class ModuleController extends Controller
 {
     public function index() {
-        return view('boxoffice.content.modules.modules');
+        return view('boxoffice.content.modules.index');
     }
 }
