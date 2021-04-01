@@ -33,7 +33,7 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/subjects/create', [SubjectController::class, 'create']);
     Route::post('/subjects/new', [SubjectController::class, 'save'])->name('subject.save');
 
-    Route::get('/subjects/{subjects_id}', [ModuleController::class, 'index']);
+    Route::get('/subjects/{subject_id}', [ModuleController::class, 'index']);
 });
 
 Route::get('/test', function() {

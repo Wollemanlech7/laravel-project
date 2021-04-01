@@ -23,7 +23,7 @@
             @foreach ($objCourseSubject as $courseSubject)
                 @if ($courseSubject->course_id == $course->id)
                
-                    <a href="#" class="flex hover:{{ $courseSubject->background }} hover:border-transparent hover:shadow-lg group block rounded-lg border border-gray-200">
+                    <a href="{{ $courseSubject->id }}" class="flex hover:{{ $courseSubject->background }} hover:border-transparent hover:shadow-lg group block rounded-lg border border-gray-200">
                         <div class="{{ $courseSubject->background }} w-1 inline-block rounded-l-lg" style="height: 100%"></div>
                         <dl class="m-4 grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
                             <div>
