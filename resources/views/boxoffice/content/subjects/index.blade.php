@@ -23,17 +23,18 @@
             @foreach ($objCourseSubject as $courseSubject)
                 @if ($courseSubject->course_id == $course->id)
                
-                    <a :href="item.url" class="{{ $courseSubject->background }} hover:border-transparent hover:shadow-lg group block rounded-lg p-4 border border-gray-200">
-                        <dl class="grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
+                    <a href="#" class="flex hover:{{ $courseSubject->background }} hover:border-transparent hover:shadow-lg group block rounded-lg border border-gray-200">
+                        <div class="{{ $courseSubject->background }} w-1 inline-block rounded-l-lg" style="height: 100%"></div>
+                        <dl class="m-4 grid sm:block lg:grid xl:block grid-cols-2 grid-rows-2 items-center">
                             <div>
                                 <dt class="sr-only">Title</dt>
-                                <dd class="group-hover:text-white leading-6 font-medium text-black">
+                                <dd class="leading-6 font-medium text-black">
                                     {{ $courseSubject->subject }}
                                 </dd>
                             </div>
                             <div>
                                 <dt class="sr-only">Category</dt>
-                                <dd class="group-hover:text-light-blue-200 text-sm font-medium sm:mb-4 lg:mb-0 xl:mb-4">
+                                <dd class=" text-sm font-medium sm:mb-4 lg:mb-0 xl:mb-4">
                                     Categoria
                                 </dd>
                             </div>
@@ -45,7 +46,6 @@
                             </div>
                         </dl>
                     </a>
-
                 @endif
             @endforeach
         </div>
