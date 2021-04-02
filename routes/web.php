@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Boxoffice\LoginController;
 use App\Http\Controllers\Boxoffice\SubjectController;
 use App\Http\Controllers\Boxoffice\ModuleController;
+use App\Http\Controllers\Boxoffice\BoxofficeController;
+
 
 
 /*
@@ -22,11 +24,13 @@ Route::get('/', function () {
 });
 
 
-Route::prefix('dashboard')->group(function () {
+Route::prefix('boxoffice')->group(function () {
     // LOGIN
     Route::get('/login', [LoginController::class, 'index'])->name('login');
-    Route::post('/login', [LoginController::class, 'store'])->name('dashboard.login');
+    Route::post('/login', [LoginController::class, 'store']);
     Route::get('/logout', [LoginController::class, 'logout']);
+
+    Route::get('/', [BoxofficeController::class, 'index']);
 
     //SUBJECTS
     Route::get('/subjects', [SubjectController::class, 'index']);

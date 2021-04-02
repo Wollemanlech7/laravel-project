@@ -22,11 +22,11 @@ class LoginController extends Controller
                         'password'  => $request['txtPassword']])) {
             
             Session::put('_BOXOFFICE_SESSION_', $this::BOXOFFICE_SESSION);
-            return Redirect('dashboard');
+            return Redirect('boxoiffice');
         } else {
             // Session::flash("login_error_title", Errors::LOGIN_01_TITLE);
             // Session::flash("login_error_message", Errors::LOGIN_01_MESSAGE);
-            return Redirect('dashboard/login');
+            return Redirect('boxoffice/login');
         }
     }
 
@@ -35,6 +35,6 @@ class LoginController extends Controller
             Auth::logout();
             Session::flush();
         }
-        return Redirect('dashboard/login');
+        return Redirect('boxoffice/login');
     }
 }
