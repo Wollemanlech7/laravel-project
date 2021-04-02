@@ -10,6 +10,11 @@ use App\Models\CoursesSubject;
 
 class SubjectController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index() {
         $objCourses = Course::where('active', 1)->get();
 

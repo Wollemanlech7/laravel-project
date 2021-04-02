@@ -24,7 +24,7 @@ Route::get('/', function () {
 
 Route::prefix('dashboard')->group(function () {
     // LOGIN
-    Route::get('/login', [LoginController::class, 'index']);
+    Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/login', [LoginController::class, 'store'])->name('dashboard.login');
     Route::get('/logout', [LoginController::class, 'logout']);
 
