@@ -26,7 +26,7 @@ Route::get('/', function () {
 
 Route::prefix('boxoffice')->group(function () {
     // LOGIN
-    Route::get('/login', [LoginController::class, 'index'])->name('login');
+    Route::get('/login', [LoginController::class, 'index'])->name('boxoffice.login');
     Route::post('/login', [LoginController::class, 'store']);
     Route::get('/logout', [LoginController::class, 'logout']);
 

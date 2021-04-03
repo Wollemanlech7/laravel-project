@@ -1,5 +1,5 @@
 @extends('boxoffice.components.layout')
- 
+@section('title', 'Subjects')
 @section('container')
    
     @foreach ($objCourses as $course)

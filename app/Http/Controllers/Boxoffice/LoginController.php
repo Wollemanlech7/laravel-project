@@ -22,7 +22,7 @@ class LoginController extends Controller
                         'password'  => $request['txtPassword']])) {
             
             Session::put('_BOXOFFICE_SESSION_', $this::BOXOFFICE_SESSION);
-            return Redirect('boxoiffice');
+            return Redirect('boxoffice');
         } else {
             // Session::flash("login_error_title", Errors::LOGIN_01_TITLE);
             // Session::flash("login_error_message", Errors::LOGIN_01_MESSAGE);
