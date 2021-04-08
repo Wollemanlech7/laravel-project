@@ -8,7 +8,6 @@
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @section('css')
-        
     @show
 </head>
 <body>
@@ -27,15 +26,16 @@
     
     <main class="static">
         <div class="absolute left-20 right-0 bottom-0 top-16 overflow-scroll" >
-            <div class="mx-10 mt-5">
+            <div class="mx-10 mt-5 z-0">
                 @section('container')
                 
                 @show 
             </div>
         </div>
     </main>
+
+    
     @section('script')
-        
     @show
 </body>
 </html>
