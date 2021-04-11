@@ -136,8 +136,8 @@
         </div>
 
         <div class="lg:col-span-3 col-span-12">
-            <div class="bg-gray-100 rounded-3xl p-4">
-                <div class="text-center">
+            <div class="bg-gray-100 rounded-3xl mt-7 ">
+                <div class="">
                     <p>Actividades</p>
                 </div>
             </div>
