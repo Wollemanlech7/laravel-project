@@ -5,6 +5,8 @@ use App\Http\Controllers\Boxoffice\LoginController;
 use App\Http\Controllers\Boxoffice\SubjectController;
 use App\Http\Controllers\Boxoffice\ModuleController;
 use App\Http\Controllers\Boxoffice\BoxofficeController;
+use App\Http\Controllers\Boxoffice\ProfileController;
+
 
 
 
@@ -28,7 +30,10 @@ Route::prefix('boxoffice')->group(function () {
     // LOGIN
     Route::get('/login', [LoginController::class, 'index'])->name('boxoffice.login');
     Route::post('/login', [LoginController::class, 'store']);
-    Route::get('/logout', [LoginController::class, 'logout']);
+    Route::get('/logout', [LoginController::class, 'logout'])->name('boxoffice.logout');
+
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+
 
     Route::get('/', [BoxofficeController::class, 'index']);
 
