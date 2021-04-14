@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Boxoffice;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\PrivilegeCategory;
 use Auth;
 use Session;
 use Redirect;
@@ -37,4 +38,14 @@ class LoginController extends Controller
         }
         return Redirect('boxoffice/login');
     }
+
+    public function getPrivilegeMenu() {
+        $return = array();
+
+        $lstPrivilegesCategories =  PrivilegeCategory::get(); 
+
+        return $lstPrivilegesCategories;
+    }
 }
+
+
