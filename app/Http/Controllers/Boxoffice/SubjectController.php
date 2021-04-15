@@ -19,11 +19,11 @@ class SubjectController extends Controller
         $objCourses = Course::where('active', 1)->get();
 
 
-        $objCourseSubject = CoursesSubject::where('courses_subjects.active', 1)
-                                            ->join('subjects', 'courses_subjects.subject_id', '=', 'subjects.id')
+        $objCourseSubject = CoursesSubject::where('course_subjects.active', 1)
+                                            ->join('subjects', 'course_subjects.subject_id', '=', 'subjects.id')
                                             ->select( 
-                                                'courses_subjects.id',
-                                                'courses_subjects.course_id',
+                                                'course_subjects.id',
+                                                'course_subjects.course_id',
                                                 'subjects.subject',
                                                 'subjects.background'
                                             )

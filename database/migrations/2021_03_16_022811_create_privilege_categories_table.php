@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQuestionsQuestionnariesTable extends Migration
+class CreatePrivilegeCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateQuestionsQuestionnariesTable extends Migration
      */
     public function up()
     {
-        Schema::create('questions_questionnaries', function (Blueprint $table) {
+        Schema::create('privilege_categories', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('question_id')->constrained();
-            $table->foreignId('questionnarie_id')->constrained();
+            $table->string('privilege_category', 30);
 
-            $table->boolean('active')->default(true);
-
+            $table->tinyInteger('menu_order');
+        
+            $table->text('icon', 350);
         });
     }
 
@@ -31,6 +31,6 @@ class CreateQuestionsQuestionnariesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('questions_questionnaries');
+        Schema::dropIfExists('privilege_categories');
     }
 }
