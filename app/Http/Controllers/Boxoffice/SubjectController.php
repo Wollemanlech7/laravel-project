@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Subject;
 use App\Models\Course;
-use App\Models\CoursesSubject;
+use App\Models\CourseSubject;
 
 class SubjectController extends Controller
 {
@@ -19,7 +19,7 @@ class SubjectController extends Controller
         $objCourses = Course::where('active', 1)->get();
 
 
-        $objCourseSubject = CoursesSubject::where('course_subjects.active', 1)
+        $objCourseSubject = CourseSubject::where('course_subjects.active', 1)
                                             ->join('subjects', 'course_subjects.subject_id', '=', 'subjects.id')
                                             ->select( 
                                                 'course_subjects.id',

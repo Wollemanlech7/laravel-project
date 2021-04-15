@@ -22,6 +22,15 @@ class CreatePrivilegeCategoriesTable extends Migration
         
             $table->text('icon', 350);
         });
+
+        DB::statement("INSERT INTO 
+                            privilege_categories
+                            (
+                                id, privilege_category, menu_order, icon
+                            )
+                    VALUES
+                    ('1', 'Subjects', '1', '-')
+        ");
     }
 
     /**

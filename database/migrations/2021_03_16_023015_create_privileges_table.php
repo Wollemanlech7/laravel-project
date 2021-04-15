@@ -26,6 +26,18 @@ class CreatePrivilegesTable extends Migration
             $table->boolean('active')->default(true);
           
         });
+
+        DB::statement("INSERT INTO 
+                            privileges
+                            (
+                                id, privilege_category_id, privilege, description, menu, menu_order, menu_url, active
+                            )
+                    VALUES
+                    (1, 1, 'SUBJECTS', 'Index Materia', 1, 1, 'subjects', 1),
+                    (2, 1, 'SUBJECTS_CREATE', 'Nueva Materia', 0, 0, 'subjects/create', 1),
+                    (3, 1, 'SUBJECTS_EDIT', 'Editar Materia', 0, 0, 'subjects/edit', 1),
+                    (4, 1, 'SUBJECTS_DELETE', 'Borrar Materia', 0, 0, 'subjects/delete', 1);
+        ");
     }
 
     /**
