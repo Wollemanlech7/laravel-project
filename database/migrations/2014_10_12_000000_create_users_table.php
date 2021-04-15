@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name', 30);
             $table->string('last_name', 30);
+            $table->string('img_path', 100);
             $table->date('birthday');
             $table->string('email', 50)->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -31,11 +32,11 @@ class CreateUsersTable extends Migration
         DB::statement("INSERT INTO 
                             users
                     (
-                        id, name, last_name, birthday, email, email_verified_at, password, phone, address, active, remember_token, created_at, updated_at
+                        id, name, last_name, img_path, birthday, email, email_verified_at, password, phone, address, active, remember_token, created_at, updated_at
                     )
                     VALUES
-                        (1, 'arturo', 'ordaz', '2002-09-03', 'admin@somma.mx', null,'". bcrypt('1234') ."', '', '', 1, '', NOW(), NOW()),
-                        (2, 'Juan', 'admin2', '2002-09-03', 'jc@somma.mx', null,'". bcrypt('1234') ."', '', '', 1, '', NOW(), NOW())       
+                        (1, 'arturo', 'ordaz', 'img/profile/avatar.png', '2002-09-03', 'admin@somma.mx', null,'". bcrypt('1234') ."', '', '', 1, '', NOW(), NOW()),
+                        (2, 'Juan', 'admin2', 'img/profile/avatar.png', '2002-09-03', 'jc@somma.mx', null,'". bcrypt('1234') ."', '', '', 1, '', NOW(), NOW())       
         ");
 
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePrivilegesCategoriesTable extends Migration
+class CreatePrivilegeCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePrivilegesCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('privileges_categories', function (Blueprint $table) {
+        Schema::create('privilege_categories', function (Blueprint $table) {
             $table->id();
 
             $table->string('privilege_category', 30);
@@ -21,8 +21,16 @@ class CreatePrivilegesCategoriesTable extends Migration
             $table->tinyInteger('menu_order');
         
             $table->text('icon', 350);
-          
         });
+
+        DB::statement("INSERT INTO 
+                            privilege_categories
+                            (
+                                id, privilege_category, menu_order, icon
+                            )
+                    VALUES
+                    ('1', 'Subjects', '1', '-')
+        ");
     }
 
     /**
@@ -32,6 +40,6 @@ class CreatePrivilegesCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('privileges_categories');
+        Schema::dropIfExists('privilege_categories');
     }
 }
