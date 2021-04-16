@@ -45,5 +45,5 @@ Route::prefix('boxoffice')->group(function () {
     Route::get('/subjects/{subject_id}', [ModuleController::class, 'index']);
 });
 
-Route::get('/test', [LoginController::class, 'getPrivilegeMenu']);
+Route::get('/test', [LoginController::class, 'prueba']);
 

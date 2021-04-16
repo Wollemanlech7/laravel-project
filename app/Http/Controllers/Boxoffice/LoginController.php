@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Boxoffice;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\PrivilegeCategory;
+use App\Models\User;
 use Auth;
 use Session;
 use Redirect;
@@ -39,12 +40,33 @@ class LoginController extends Controller
         return Redirect('boxoffice/login');
     }
 
-    public function getPrivilegeMenu() {
+    public function getPrivilegeMenu(User $objUser) {
         $return = array();
 
-        $lstPrivilegesCategories =  PrivilegeCategory::get(); 
+        $lstPrivilegesCategories =  PrivilegeCategory::orderBy('menu_order', 'asc')->get(); 
 
-        return $lstPrivilegesCategories;
+        foreach ($lstPrivilegesCategories as $key => $privilegeCategory) {
+            $lstPrivilege = $objUser->privileges
+                        ->where([
+                            ['privilege_category_id', $privilegeCategory->id],
+                            ['menu', true],
+                            ['active', true]
+                        ])
+                        ->sortBy('menu_order');
+
+            if (sizeof($lstPrivilege) > 0) {
+                array_push($return, array(
+                    'category' => $privilegeCategory,
+                    'privilege' => $lstPrivilege
+
+                ));
+            }
+        }
+        return $return;
+    }
+    
+    public function prueba(){ 
+        return LoginController::getPrivilegeMenu(User::find(1));
     }
 }
 
