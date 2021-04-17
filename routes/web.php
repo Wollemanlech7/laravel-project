@@ -8,34 +8,22 @@ use App\Http\Controllers\Boxoffice\BoxofficeController;
 use App\Http\Controllers\Boxoffice\ProfileController;
 
 
-
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('index'); 
 });
 
+// LOGIN
+Route::get('/boxoffice/login', [LoginController::class, 'index'])->name('boxoffice.login');
+Route::post('/boxoffice/login', [LoginController::class, 'store']);
+Route::get('/boxofficelogout', [LoginController::class, 'logout'])->name('boxoffice.logout');
 
-Route::prefix('boxoffice')->group(function () {
-    // LOGIN
-    Route::get('/login', [LoginController::class, 'index'])->name('boxoffice.login');
-    Route::post('/login', [LoginController::class, 'store']);
-    Route::get('/logout', [LoginController::class, 'logout'])->name('boxoffice.logout');
-
-    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
-
-
+Route::group([  'middleware'    => 'boxoffice.auth',
+                'prefix'        => 'boxoffice'  ], function () {
+    //INDEX
     Route::get('/', [BoxofficeController::class, 'index']);
+    
+    //PROFILE
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
 
     //SUBJECTS
     Route::get('/subjects', [SubjectController::class, 'index']);

@@ -16,7 +16,7 @@ class CreateUserPrivilegesTable extends Migration
         Schema::create('user_privileges', function (Blueprint $table) {
             $table->id();
           
-            $table->foreignId('users_id')->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->foreignId('privilege_id')->constrained();
         });
     }

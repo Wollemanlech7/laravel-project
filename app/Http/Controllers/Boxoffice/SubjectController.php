@@ -9,15 +9,9 @@ use App\Models\Course;
 use App\Models\CourseSubject;
 
 class SubjectController extends Controller
-{
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
+{   
     public function index() {
         $objCourses = Course::where('active', 1)->get();
-
 
         $objCourseSubject = CourseSubject::where('course_subjects.active', 1)
                                             ->join('subjects', 'course_subjects.subject_id', '=', 'subjects.id')
@@ -44,14 +38,11 @@ class SubjectController extends Controller
         $subject = $request->input('txt_subject');
 
         $new_subject = new Subject;
-
         $new_subject->subject = $subject;
-
         $new_subject->save();
+
         echo "se guardo exitosamente";
-
     }
-
     
 }
 
