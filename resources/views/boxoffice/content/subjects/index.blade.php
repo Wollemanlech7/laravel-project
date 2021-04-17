@@ -6,7 +6,7 @@
         <div class="mt-10" aria-hidden="true">
             <header class="flex items-center justify-between">
                 <h2 class="text-lg leading-6 font-medium text-black">{{ $course->exam }}</h2>
-                <button class="hover:bg-blue-400 hover:text-light-blue-800 group flex items-center rounded-md bg-blue-100 text-blue-600 text-sm font-medium px-4 py-2">
+                <button onclick="showModal()" class="hover:bg-blue-400 hover:text-light-blue-800 group flex items-center rounded-md bg-blue-100 text-blue-600 text-sm font-medium px-4 py-2">
                     <svg class="group-hover:text-white text-light-blue-500 mr-2" width="12" height="20" fill="currentColor">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M6 5a1 1 0 011 1v3h3a1 1 0 110 2H7v3a1 1 0 11-2 0v-3H2a1 1 0 110-2h3V6a1 1 0 011-1z"></path>
                     </svg>
@@ -50,5 +50,25 @@
             @endforeach
         </div>
     @endforeach
-    
+    @include('boxoffice.content.subjects.modals.new-subjects') 
+@endsection
+@section('script')
+    <script> 
+        function showModal(){
+            var modal= document.querySelector('#new-subject-modal')
+                     
+            if (modal.classList.contains('hidden') && modal.classList.contains('flex')) {
+                modal.classList.remove('hidden') 
+            }
+        };
+
+        function closeModal(){
+            var modal= document.querySelector('#new-subject-modal')
+                     
+            if (!modal.classList.contains('hidden')) {
+                modal.classList.add('hidden') 
+            }
+         };
+
+    </script>
 @endsection
