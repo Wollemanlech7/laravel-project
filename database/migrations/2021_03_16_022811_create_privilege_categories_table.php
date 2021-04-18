@@ -17,19 +17,15 @@ class CreatePrivilegeCategoriesTable extends Migration
             $table->id();
 
             $table->string('privilege_category', 30);
-
-            $table->tinyInteger('menu_order');
-        
-            $table->text('icon', 350);
+            $table->string('url', 30);
+            $table->tinyInteger('position');
         });
 
         DB::statement("INSERT INTO 
-                            privilege_categories
-                            (
-                                id, privilege_category, menu_order, icon
-                            )
-                    VALUES
-                    ('1', 'Subjects', '1', '-')
+                            privilege_categories(
+                                id, privilege_category, url, position
+                            ) 
+                            VALUES(1, 'Subjects', 'subject.index', 1);
         ");
     }
 

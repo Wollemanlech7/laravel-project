@@ -12,4 +12,8 @@ class PrivilegeCategory extends Model
     public function privileges() {
         return $this->hasMany(Privilege::class);
     }
+
+    public function privilegeIcon() {
+        return $this->hasMany(PrivilegeIcon::class);
+    }
 }

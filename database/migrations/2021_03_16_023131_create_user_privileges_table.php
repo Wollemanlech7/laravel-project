@@ -19,6 +19,18 @@ class CreateUserPrivilegesTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('privilege_id')->constrained();
         });
+
+        DB::statement("INSERT INTO 
+                            user_privileges(
+                                id, user_id, privilege_id
+                            ) 
+                            VALUES
+                            (1, 2, 1),
+                            (2, 2, 2),
+                            (3, 2, 3),
+                            (4, 2, 4),
+                            (5, 1, 1)
+        ");
     }
 
     /**

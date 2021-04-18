@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Middleware;
-
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth\Guard;
 
@@ -30,9 +29,10 @@ class BoxofficeAuth
                 && Session::has('_BOXOFFICE_SESSION_')
                 && Session::get('_BOXOFFICE_SESSION_') == LoginController::BOXOFFICE_SESSION
         ) {
-            if (!Session::has('privilegiosMenu')) {
-                Session::put("privilegiosMenu", BoxofficeController::getPrivilegeMenu(Auth::user()));
+            if (!Session::has('privilegesMenu')) {
+                Session::put("privilegesMenu", BoxofficeController::getPrivilegeMenu(Auth::user()));
             }   
+            View()->share('_PRIVILEGES_MENU_', Session::get('privilegesMenu'));
             return $next($request);
         } else {
             return redirect()->route('boxoffice.login');

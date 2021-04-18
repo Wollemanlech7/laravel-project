@@ -19,10 +19,10 @@ class CreatePrivilegesTable extends Migration
             $table->foreignId('privilege_category_id')->constrained('privilege_categories');
 
             $table->string('privilege', 25);
-            $table->string('description', 30);
-            $table->boolean('menu')->default(true);
-            $table->tinyInteger('menu_order');
-            $table->string('menu_url', 30);
+            // $table->string('description', 30);
+            // $table->boolean('menu')->default(true);
+            // $table->tinyInteger('menu_order');
+            $table->string('url', 30);
             $table->boolean('active')->default(true);
           
         });
@@ -30,13 +30,13 @@ class CreatePrivilegesTable extends Migration
         DB::statement("INSERT INTO 
                             privileges
                             (
-                                id, privilege_category_id, privilege, description, menu, menu_order, menu_url, active
+                                id, privilege_category_id, privilege, url, active
                             )
                     VALUES
-                    (1, 1, 'SUBJECTS', 'Index Materia', 1, 1, 'subjects', 1),
-                    (2, 1, 'SUBJECTS_CREATE', 'Nueva Materia', 0, 0, 'subjects/create', 1),
-                    (3, 1, 'SUBJECTS_EDIT', 'Editar Materia', 0, 0, 'subjects/edit', 1),
-                    (4, 1, 'SUBJECTS_DELETE', 'Borrar Materia', 0, 0, 'subjects/delete', 1);
+                    (1, 1, 'SUBJECTS_INDEX',    'subjects',         1),
+                    (2, 1, 'SUBJECTS_CREATE',   'subjects/create',  1),
+                    (3, 1, 'SUBJECTS_EDIT',     'subjects/edit',    1),
+                    (4, 1, 'SUBJECTS_DELETE',   'subjects/delete',  1);
         ");
     }
 
