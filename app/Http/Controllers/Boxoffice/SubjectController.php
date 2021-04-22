@@ -36,12 +36,49 @@ class SubjectController extends Controller
 
     public function save(Request $request) {
         $subject = $request->input('txt_subject');
+        $course = $request->input('hi_course');
+        $return = 0;
 
-        $new_subject = new Subject;
-        $new_subject->subject = $subject;
-        $new_subject->save();
+        $newSubject = new Subject;
+        $newSubject->subject = $subject;
+        $newSubject->background = "bg-purple-700";
+        $newSubject->icon = "/";
 
-        echo "se guardo exitosamente";
+        try {
+            if ($newSubject->save()) {
+                $newCoursesSubject = new CourseSubject;
+
+                $newCoursesSubject->course_id = $course;
+                $newCoursesSubject->subject_id = $newSubject->id;
+                $newCoursesSubject->active = true;
+                try {
+                    if ($newCoursesSubject->save()) {                  
+                        $return = [
+                            'sucess' => 1,
+                            'msn' => 'se guardo exitosamente'
+                        ];
+                    } else {
+                        $return = [
+                            'sucess' => 0,
+                            'msn' => 'error'
+                        ];
+                    }
+                } catch (\Throwable $th) {
+                    return $th;
+                }
+
+
+            } else {
+                $return = [
+                    'sucess' => 0,
+                    'msn' => 'error'
+                ];
+            }
+
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+        return redirect()->route('subject.index') ;
     }
     
 }
