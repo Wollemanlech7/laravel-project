@@ -34,6 +34,7 @@ Route::group([  'middleware'    => 'boxoffice.auth',
     Route::get('/subjects/{subject_id}', [ModuleController::class, 'index']);
 
     Route::get('/questionnaires', [QuestionnaireController::class, 'index'])->name('questionnaire.index');
+    Route::post('/questionnaires/new', [QuestionnaireController::class, 'save'])->name('questionnaire.save');
 });
 
 Route::get('/test', [BoxofficeController::class, 'prueba']);
