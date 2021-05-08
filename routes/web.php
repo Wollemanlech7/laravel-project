@@ -7,6 +7,9 @@ use App\Http\Controllers\Boxoffice\ModuleController;
 use App\Http\Controllers\Boxoffice\BoxofficeController;
 use App\Http\Controllers\Boxoffice\ProfileController;
 use App\Http\Controllers\Boxoffice\QuestionnaireController;
+use App\Http\Controllers\Dashboard\DashboardController;
+
+
 
 
 Route::get('/', function () {
@@ -35,6 +38,13 @@ Route::group([  'middleware'    => 'boxoffice.auth',
 
     Route::get('/questionnaires', [QuestionnaireController::class, 'index'])->name('questionnaire.index');
     Route::post('/questionnaires/new', [QuestionnaireController::class, 'save'])->name('questionnaire.save');
+});
+
+Route::group([
+                'prefix'    => 'dashboard'  ], function () {
+    //INDEX
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
+
 });
 
 Route::get('/test', [BoxofficeController::class, 'prueba']);
