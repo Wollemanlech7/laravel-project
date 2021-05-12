@@ -70,7 +70,7 @@
     <!-- Left mini bar -->
     <nav
       aria-label="Options"
-      class="z-20 flex-col items-center flex-shrink-0 sm:hidde w-16 py-4 bg-white   sm:flex "
+      class="z-20 flex-col items-center flex-shrink-0 sm:hidde w-20 py-4 bg-white   sm:flex "
       >
 		<!-- Logo -->
 		<div class="flex-shrink-0 pt-1 pb-8">
@@ -138,7 +138,7 @@
 		</div>
 
       <!-- User avatar -->
-		<div class="relative flex items-center flex-shrink-0 p-2" x-data="{ isOpen: false }">
+		<!--<div class="relative flex items-center flex-shrink-0 p-2" x-data="{ isOpen: false }">
 			<button
 			  @click="isOpen = !isOpen; $nextTick(() => {isOpen ? $refs.userMenu.focus() : null})"
 			  class="transition-opacity rounded-lg opacity-80 hover:opacity-100 focus:outline-none focus:ring focus:ring-indigo-600 focus:ring-offset-white focus:ring-offset-2"
@@ -167,7 +167,7 @@
 
 				<a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign out</a>
 			</div>
-		</div>
+		</div>-->
     </nav>
 
     <div
