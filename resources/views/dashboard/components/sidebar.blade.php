@@ -70,14 +70,14 @@
     <!-- Left mini bar -->
     <nav
       aria-label="Options"
-      class="z-20 flex-col items-center flex-shrink-0 sm:hidde w-20 py-4 bg-white   sm:flex "
+      class="z-20 flex-col items-center flex-shrink-0 sm:hidde w-20 py-4 bg-gradient-to-r from-blue-50 to-blue-50 opacity- sm:flex"
       >
 		<!-- Logo -->
 		<div class="flex-shrink-0 pt-1 pb-8">
 			<button
 			  @click="(isSidebarOpen && currentSidebarTab == 'linksTab') ? isSidebarOpen = false : isSidebarOpen = true; currentSidebarTab = 'linksTab'"
 			  class="p-2 transition-colors hover:text-purple-700 focus:outline-none"
-			  :class="(isSidebarOpen && currentSidebarTab == 'linksTab') ? 'text-p' : 'text-gray-500 bg-white'"
+			  :class="(isSidebarOpen && currentSidebarTab == 'linksTab') ? 'text-p' : 'text-gray-500  '"
 			  >
 				<span class="sr-only">Toggle sidebar</span>
 				<svg
@@ -97,7 +97,7 @@
 			<button
 			  @click="(isSidebarOpen && currentSidebarTab == 'Home') ? isSidebarOpen = false : isSidebarOpen = true; currentSidebarTab = 'linksTab'"
 			  class="p-3 transition-colors rounded-full hover:bg-purple-700 hover:text-white"
-			  :class="(isSidebarOpen && currentSidebarTab == 'Home') ? 'text-white bg-indigo-600' : 'text-gray-500 bg-white'"
+			  :class="(isSidebarOpen && currentSidebarTab == 'Home') ? 'text-white bg-indigo-600' : 'text-gray-500 '"
 			  >
 				<span class="sr-only">Toggle sidebar</span>
 				<i data-feather="home"></i>
@@ -106,7 +106,7 @@
 			<button
 				@click="(isSidebarOpen && currentSidebarTab == 'Calendar') ? isSidebarOpen = false : isSidebarOpen = true; currentSidebarTab = 'linksTab'"
 				class="p-3 transition-colors rounded-full hover:bg-purple-700 hover:text-white"
-				:class="(isSidebarOpen && currentSidebarTab == 'Calendar') ? 'text-white bg-indigo-600' : 'text-gray-500 bg-white'">
+				:class="(isSidebarOpen && currentSidebarTab == 'Calendar') ? 'text-white bg-indigo-600' : 'text-gray-500 '">
 				<span class="sr-only">Toggle sidebar</span>
 				<i data-feather="calendar"></i>
 			</button>
@@ -114,7 +114,7 @@
 			<button
 				@click="(isSidebarOpen && currentSidebarTab == 'Messages') ? isSidebarOpen = false : isSidebarOpen = true; currentSidebarTab = 'linksTab'"
 				class="p-3 transition-colors rounded-full hover:bg-purple-700 hover:text-white"
-				:class="(isSidebarOpen && currentSidebarTab == 'Messages') ? 'text-white bg-indigo-600' : 'text-gray-500 bg-white'">
+				:class="(isSidebarOpen && currentSidebarTab == 'Messages') ? 'text-white bg-indigo-600' : 'text-gray-500 '">
 				<span class="sr-only">Toggle sidebar</span>
 				<i data-feather="edit-3"></i>
 			</button>
@@ -122,7 +122,7 @@
 			<button
 				@click="(isSidebarOpen && currentSidebarTab == 'Checklist') ? isSidebarOpen = false : isSidebarOpen = true; currentSidebarTab = 'linksTab'"
 				class="p-3 transition-colors rounded-full hover:bg-purple-700 hover:text-white"
-				:class="(isSidebarOpen && currentSidebarTab == 'Checklist') ? 'text-white bg-indigo-600' : 'text-gray-500 bg-white'">
+				:class="(isSidebarOpen && currentSidebarTab == 'Checklist') ? 'text-white bg-indigo-600' : 'text-gray-500 '">
 				<span class="sr-only">Toggle sidebar</span>
 				<i data-feather="clock"></i>
 				
@@ -131,7 +131,7 @@
 			<button
 				@click="(isSidebarOpen && currentSidebarTab == 'Settings') ? isSidebarOpen = false : isSidebarOpen = true; currentSidebarTab = 'linksTab'"
 				class="p-3 transition-colors rounded-full hover:bg-purple-700 hover:text-white"
-				:class="(isSidebarOpen && currentSidebarTab == 'Settings') ? 'text-white bg-indigo-600' : 'text-gray-500 bg-white'">
+				:class="(isSidebarOpen && currentSidebarTab == 'Settings') ? 'text-white bg-indigo-600' : 'text-gray-500 '">
 				<span class="sr-only">Toggle sidebar</span>
 				<i data-feather="settings"></i>
 			</button>
