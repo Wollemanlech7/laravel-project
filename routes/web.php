@@ -8,6 +8,8 @@ use App\Http\Controllers\Boxoffice\BoxofficeController;
 use App\Http\Controllers\Boxoffice\ProfileController;
 use App\Http\Controllers\Boxoffice\QuestionnaireController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\DashboardLoginController;
+
 
 
 
@@ -47,5 +49,12 @@ Route::group([
 
 });
 
+//LOGIN
+Route::get('/dashboard/login', [DashboardLoginController::class, 'index'])->name('dashboard.login');
+Route::post('/dashboard/login', [DashboardLoginController::class, 'store']);
+Route::get('/dashboard/logout', [DashboardLoginController::class, 'logout'])->name('dashboard.logout');
+
 Route::get('/test', [BoxofficeController::class, 'prueba']);
+
+
 
