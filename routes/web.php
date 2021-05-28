@@ -9,6 +9,8 @@ use App\Http\Controllers\Boxoffice\ProfileController;
 use App\Http\Controllers\Boxoffice\QuestionnaireController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\DashboardLoginController;
+use App\Http\Controllers\UserController;
+
 
 
 
@@ -54,7 +56,17 @@ Route::get('/dashboard/login', [DashboardLoginController::class, 'index'])->name
 Route::post('/dashboard/login', [DashboardLoginController::class, 'store']);
 Route::get('/dashboard/logout', [DashboardLoginController::class, 'logout'])->name('dashboard.logout');
 
+
+//PUBLIC-USER
+Route::get('/register', [UserController::class, 'index'])->name('user.register');
+Route::post('/register/store', [UserController::class, 'store'])->name('user.store');
+//Route::get('/register', [DashboardLoginController::class, 'logout'])->name('dashboard.logout');
+
+//PRICE
+Route::get('/price', [DashboardController::class, 'price'])->name('price');
+
 Route::get('/test', [BoxofficeController::class, 'prueba']);
+
 
 
 

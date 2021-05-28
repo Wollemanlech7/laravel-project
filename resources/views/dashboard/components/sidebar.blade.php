@@ -135,6 +135,15 @@
 				<span class="sr-only">Toggle sidebar</span>
 				<i data-feather="settings"></i>
 			</button>
+			<!-- Level -->
+			<a
+			href="{{ route('price') }}"
+				@click="(isSidebarOpen && currentSidebarTab == 'Settings') ? isSidebarOpen = false : isSidebarOpen = true; currentSidebarTab = 'linksTab'"
+				class="p-3 transition-colors rounded-full hover:bg-purple-700 hover:text-white"
+				:class="(isSidebarOpen && currentSidebarTab == 'Settings') ? 'text-white bg-indigo-600' : 'text-gray-500 '">
+				<span class="sr-only">Toggle sidebar</span>
+				<i data-feather="shopping-bag"></i>
+			</a>
 		</div>
 
       <!-- User avatar -->
